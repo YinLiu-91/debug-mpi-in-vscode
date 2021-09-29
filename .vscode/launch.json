@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            // "request": "launch", 
+            "request":"attach", // 修改"request"的值为"attach"即附加到进程中去
+            "processId": "${command:pickProcess}", // !添加"processId"配置项
+            // "program": "输入程序名称，例如 ${workspaceFolder}/a.out",
+            "program": "${workspaceFolder}/build/hello-mpi", //修改为可执行程序所在位置
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
