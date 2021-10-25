@@ -13,4 +13,5 @@ include_directories(SYSTEM ${MPI_INCLUDE_PATH})
 
 add_executable(hello-mpi hello-mpi.cpp)
 
+
 target_link_libraries(hello-mpi ${MPI_CXX_LIBRARIES}) # this must be  MPI_CXX_LIBRARIES for cpp file
